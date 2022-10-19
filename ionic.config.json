@@ -1,5 +1,7 @@
 {
   "name": "followChild",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
