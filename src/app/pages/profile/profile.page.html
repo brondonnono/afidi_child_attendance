@@ -1,0 +1,337 @@
+<!-- <ion-content>
+
+  <div class="header">
+    <h2>{{name}}</h2>
+  </div>
+  <div class="flex">
+    <div class="border-blue">
+      <div class="border-white">
+        <div class="img-box">
+          <img src="../../assets/elon-musk.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-card>
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img src="../../assets/elon-musk.jpg" />
+      </ion-avatar>
+      <ion-label>
+        <h2><b>Elon Musk</b></h2>
+        <p>Il y a 14 heures</p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none" class="tweet">
+      <ion-label text-wrap>Production version will be a lot more polished than this prototype, but still fun to see
+      </ion-label>
+    </ion-item>
+    <ion-button size="small" fill="clear">
+      <ion-icon slot="start" name="text"></ion-icon> 
+      34
+    </ion-button>
+    <ion-button size="small" fill="clear">
+      <ion-icon slot="start" name="repeat"></ion-icon> 
+      116
+    </ion-button>
+    <ion-button size="small" fill="clear">
+      <ion-icon slot="start" name="heart-empty"></ion-icon> 
+      210
+    </ion-button>
+  </ion-card>
+
+  <ion-card>
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img src="../../assets/elon-musk.jpg" />
+      </ion-avatar>
+      <ion-label>
+        <h2><b>Elon Musk</b></h2>
+        <p>Il y a 23 min</p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none" class="tweet">
+      <ion-label text-wrap>Production version will be a lot more polished than this prototype, but still fun to see
+      </ion-label>
+    </ion-item>
+    <img class="tweet-img" src="https://pbs.twimg.com/media/EFfmFEEU8AA1SmA?format=jpg&name=medium" />
+    <ion-button size="small" fill="clear">
+      <ion-icon slot="start" name="text"></ion-icon>
+      34
+    </ion-button>
+    <ion-button size="small" fill="clear">
+      <ion-icon slot="start" name="repeat"></ion-icon>
+      67
+    </ion-button>
+    <ion-button size="small" fill="clear">
+      <ion-icon slot="start" name="heart-empty"></ion-icon>
+      298
+    </ion-button>
+  </ion-card>
+
+  <ion-card>
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img src="../../assets/elon-musk.jpg" />
+      </ion-avatar>
+      <ion-label>
+        <h2><b>Elon Musk</b></h2>
+        <p>Il y a 14 heures</p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none" class="tweet">
+      <ion-label text-wrap>Starship at our launch facility in Cameron County, Texas. Watch as <i>@elonmusk</i> gives an
+        update on the vehicle today at ~7:00 p.m. CDT → <i>http://spacex.com/webcast</i></ion-label>
+    </ion-item>
+    <img class="tweet-img" src="https://pbs.twimg.com/media/EFjhHzwUEAIM2n_?format=jpg&name=medium">
+    <ion-button size="small" fill="clear">
+      <ion-icon slot="start" name="text"></ion-icon> 34
+    </ion-button>
+    <ion-button size="small" fill="clear">
+      <ion-icon slot="start" name="repeat"></ion-icon> 116
+    </ion-button>
+    <ion-button size="small" fill="clear">
+      <ion-icon slot="start" name="heart-empty"></ion-icon> 210
+    </ion-button>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="pencil"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content> -->
+
+<!-- <ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile">
+  <ion-card no-margin>
+    <ion-card-content class="bg-profile">
+      <img src="assets/img/avatar.jpeg">
+      <h1 class="fw500">João Firmino</h1>
+      <h2 color="light" margin-bottom>Customer</h2>
+      <ion-button icon-left color="secondary">
+        <ion-icon name="photos"></ion-icon> 
+        Edit / Add Avatar
+      </ion-button>
+    </ion-card-content>
+  
+    <ion-grid fixed no-padding>
+      <ion-row>
+        <ion-col size="12" padding>
+
+          <ion-list margin-bottom>
+            <ion-list-header color="light">
+              <ion-label class="fw700">Form</ion-label>
+            </ion-list-header>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">Full Name:</ion-label>
+              <ion-input inputmode="text" placeholder="Ex..: Joe Doe" value="João Firmino"></ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label color="dark" position="stacked">Email:</ion-label>
+              <ion-input inputmode="email" placeholder="Ex.: joe@doe.com" value="firminoata@gmail.com"></ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label color="dark" position="stacked">Address:</ion-label>
+              <ion-input inputmode="text" placeholder="Ex.: Abey Road 5"></ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label color="dark">City</ion-label>
+              <ion-select>
+                <ion-select-option value="nes">New York</ion-select-option>
+                <ion-select-option value="n64">Los Angeles</ion-select-option>
+                <ion-select-option value="ps">London</ion-select-option>
+                <ion-select-option value="genesis">Paris</ion-select-option>
+                <ion-select-option value="saturn">São Paulo</ion-select-option>
+                <ion-select-option value="snes">Tokyo</ion-select-option>
+                <ion-select-option value="snes">New Delhi</ion-select-option>
+              </ion-select>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label color="dark">State</ion-label>
+              <ion-select>
+                <ion-select-option value="nes">NY</ion-select-option>
+                <ion-select-option value="n64">CA</ion-select-option>
+                <ion-select-option value="ps">Greater London</ion-select-option>
+                <ion-select-option value="genesis">Paris</ion-select-option>
+                <ion-select-option value="saturn">SP</ion-select-option>
+                <ion-select-option value="snes">Kantō</ion-select-option>
+                <ion-select-option value="snes">Delhi</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+
+          <ion-list>
+            <ion-radio-group>
+              <ion-list-header color="light">
+                <ion-label class="fw700">User Type</ion-label>
+              </ion-list-header>
+          
+              <ion-item>
+                <ion-label color="primary">Customer</ion-label>
+                <ion-radio slot="start" value="customer" checked></ion-radio>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label color="primary">Owner</ion-label>
+                <ion-radio slot="start" value="agent"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+
+            <ion-item>
+              <ion-label class="text-1x">Checkbox test</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+          </ion-list>
+  
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <ion-button size="large" expand="full" color="dark" (click)="sendData()" no-margin>Edit</ion-button>
+  </ion-card>
+  
+  <div padding>
+    <ion-text color="dark" no-margin>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum odio placeat incidunt nesciunt atque ratione quisquam, fugit
+      omnis maxime adipisci excepturi dignissimos aliquam asperiores itaque unde sequi? Minus, quia, dolore?
+    </ion-text>
+  </div>
+</ion-content> -->
+
+
+<!-- 
+<ion-header mode="ios">
+  <ion-toolbar mode="ios" color="primary">
+    <ion-title slot="start">
+      Mon Profil
+    </ion-title>
+    <ion-buttons mode='ios' slot="end">
+      <ion-button mode='ios' color="danger">
+        <ion-icon name="log-out" mode="ios"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="center ion-padding">
+    <img src="assets/img/noavatar.png" class="img" />
+  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        Mes 
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      kjkjkj
+    </ion-card-content>
+  </ion-card>
+</ion-content> -->
+
+
+
+<ion-header mode='ios' class="ion-no-border" translucent="true">
+  <ion-toolbar mode='ios' color="secondary">
+    <ion-buttons mode='ios' slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-title mode='ios'>{{translate.settings.title}}</ion-title> -->
+    <ion-buttons mode='ios' slot="end">
+      <ion-button mode='ios'>
+        <ion-icon mode='ios' ios="notifications" md="notifications"></ion-icon>
+        <ion-badge mode='ios'  size='2' class="notif-badge" color="warning">
+          <span>1</span></ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode='ios' fullscreen="true">
+  <ion-card mode='ios'>
+    <ion-item mode='ios' mode='ios' lines="none">
+      <ion-icon mode='ios' name="moon-outline" slot="start"></ion-icon>
+      <ion-label class="title" mode='ios'>
+        <!-- {{translate.settings.dark}} -->
+      </ion-label>
+      <ion-toggle mode='ios' ></ion-toggle>
+    </ion-item>
+  </ion-card>
+  <ion-card mode='ios'>
+    <ion-item mode='ios' mode='ios' lines="none">
+      <ion-label class="title" mode='ios'>
+        sfdfd
+      </ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-card mode='ios'>
+    <ion-item mode='ios' mode='ios' lines="none">
+      <ion-label class="title" mode='ios' color="medium">
+        sdsds
+      </ion-label>
+    </ion-item>
+      <ion-item mode='ios' mode='ios' class="about">
+        <ion-label mode='ios'>
+          sdsdsd
+        </ion-label>
+        <ion-label mode='ios' slot="end" color="medium">
+         sdsdsd
+        </ion-label>
+      </ion-item>
+      <ion-item mode='ios' mode='ios' class="about">
+        <ion-label mode='ios'>
+          sdsdsd
+        </ion-label>
+        <ion-label slot="end" mode='ios' color="medium">
+          sdsdss
+        </ion-label>
+      </ion-item>
+      <ion-item mode='ios' class="about">
+        sdsdsd
+        <ion-label slot="end" mode='ios' color="medium">
+         sdsdsd
+        </ion-label>
+      </ion-item>
+      <ion-item mode='ios' class="about">
+        <ion-label mode='ios'>
+         sdsdsd
+        </ion-label>
+        <ion-label slot="end" mode='ios' color="medium">
+          sdsds
+        </ion-label>
+      </ion-item>
+      <ion-item mode='ios' class="about">
+        <ion-label mode='ios'>
+  sdsds
+        </ion-label>
+        <ion-label slot="end" mode='ios' color="medium">
+          sdsds
+        </ion-label>
+      </ion-item>
+      <ion-item mode='ios' color="primary" class="btn-pointer ion-text-center" >
+          <ion-label mode='ios'>
+sdsd
+          </ion-label>
+      </ion-item>
+  </ion-card>
+  <ion-item mode='ios' class="ion-text-center" lines="none" color="danger">
+    <ion-label mode='ios'>
+    sdsd
+    </ion-label>
+  </ion-item>
+</ion-content>
