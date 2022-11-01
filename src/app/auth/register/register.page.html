@@ -19,12 +19,15 @@
     </ion-item>
 
     <ion-item>
-      <ion-label color="light">Confirmez le mot de passe</ion-label>
-      <ion-input color="light" type="password" placeholder="Confirmez le mot de passe"></ion-input>
+      <ion-label color="light">Repetez le mot de passe</ion-label>
+      <ion-input color="light" type="password" placeholder="Repetez le mot de passe"></ion-input>
     </ion-item>
 
     <ion-button (click)="register()" color="success" expand="block" shape="round">S'inscrire</ion-button>
-    <br>
-    <ion-button routerLink="/login" color="light" expand="block" shape="round" fill="outline">Connexion</ion-button>
+
+    <ion-button routerLink="/login" color="light" expand="block" shape="round" fill="outline">
+      <ion-icon slot="start" name="arrow-back"></ion-icon>
+      <ion-label>Connexion</ion-label>
+    </ion-button>
   </div>
 </ion-content>
