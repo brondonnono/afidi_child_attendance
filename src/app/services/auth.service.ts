@@ -10,8 +10,8 @@ export class AuthService {
     private navigationService: NavigationService
   ) { }
 
-  login() {
-    this.navigationService.goto('');
+  login({tel , password}) {
+    return null;
     // this.checkUserType();
   }
 
