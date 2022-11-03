@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "afidi-follow-child"
+  },
+  "targets": {
+    "afidi-follow-child": {
+      "hosting": {
+        "app": [
+          "afidi-follow-child"
+        ]
+      }
+    }
+  }
+}
