@@ -32,10 +32,25 @@ export class StorageService {
     return this.auth.currentUser.uid;
   }
 
-  // async getMenuItems() {
-  //   const menus = await getDocs(collection(this.firestore, "main_menu"));
-  //   return menus;
-  // }
+  async getActivities() {
+    const activities = await getDocs(collection(this.firestore, "activities"));
+    return activities;
+  }
+
+  async getOneDayActivities(day: string) {
+    let date = new Date(day);
+    let dayActivities = [];
+    const activities =  await this.getActivities();
+    if (activities) {
+      activities.forEach(res => {
+        const activity = res.data();
+        if (activity.day == date) {
+          dayActivities.push(activity);
+        }
+      });
+    }
+    return dayActivities;
+  }
 
   // async getUserExperiences() {
   //   const user = this.auth.currentUser;

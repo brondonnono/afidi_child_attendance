@@ -16,13 +16,13 @@
     <ion-list-header>
       Aujourd'hui
     </ion-list-header>
-    <ion-item *ngFor="let activity of getActivities()">
+    <ion-item *ngFor="let activity of getTodayActivities()">
       <ion-label>
         <h2>{{activity?.title}}</h2>
         <h4 class="gray">{{activity.shortDescription}}</h4>
       </ion-label>
       <ion-label slot="end" class="gray">
-        {{activity.beginTime}}
+        <h4>{{activity.beginTime}} - {{activity.endTime}}</h4>
       </ion-label>
       <ion-icon class="gray" slot="end" name="chevron-forward"></ion-icon>
     </ion-item>
@@ -31,13 +31,13 @@
     <ion-list-header>
       Demain
     </ion-list-header>
-    <ion-item *ngFor="let activity of getActivities()">
+    <ion-item *ngFor="let activity of getTomorrowActivities()">
       <ion-label>
         <h2>{{activity?.title}}</h2>
         <h4 class="gray">{{activity.shortDescription}}</h4>
       </ion-label>
       <ion-label slot="end" class="gray">
-        {{activity.beginTime}}
+        <h4>{{activity.beginTime}} - {{activity.endTime}}</h4>
       </ion-label>
       <ion-icon class="gray" slot="end" name="chevron-forward"></ion-icon>
     </ion-item>
