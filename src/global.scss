@@ -24,3 +24,20 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+/* Personal style */
+
+// color
+.logout {
+    color: red !important;
+    --color: red !important;
+}
+
+.light {
+    color: gainsboro !important;
+}
+
+.gray {
+    color: gray !important
+}

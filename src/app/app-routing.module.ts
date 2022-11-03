@@ -13,20 +13,22 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
-    ...canActivate(redirectUnauthorizedToLogin)
+    // ...canActivate(redirectUnauthorizedToLogin)
   },
   {
     path: 'login',
     loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule),
-    ...canActivate(redirectLoggedInToHome)
+    // ...canActivate(redirectLoggedInToHome)
   },
   {
     path: 'register',
-    loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule),
+    ...canActivate(redirectLoggedInToHome)
   },
   {
     path: 'forgot',
-    loadChildren: () => import('./auth/forgot/forgot.module').then( m => m.ForgotPageModule)
+    loadChildren: () => import('./auth/forgot/forgot.module').then( m => m.ForgotPageModule),
+    ...canActivate(redirectLoggedInToHome)
   },
   {
     path: '**',
