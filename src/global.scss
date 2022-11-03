@@ -38,6 +38,56 @@
     color: gainsboro !important;
 }
 
-.gray {
+.lightGrey, .lightGray {
+    color: #fcfcfc !important;
+}
+
+.gray, .grey {
     color: gray !important
+}
+
+.list-header-color {
+    --background: #f1f3f4;
+}
+
+.bg-smallGrey {
+    --background: #fcfcfc !important;
+    background: #fcfcfc !important;
+}
+
+//alignment
+.center {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+// padding
+
+.pb-10 {
+    padding-bottom: 1rem !important;
+}
+
+.p-10 {
+    padding: 1rem !important;
+}
+
+.pt-10 {
+    padding-top: 1rem !important;
+}
+
+.py-10 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.px-10 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+// size
+.icon_full {
+    font-size: 1500%;
 }
