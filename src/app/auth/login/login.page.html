@@ -10,16 +10,19 @@
 
     <form [formGroup]="credentials" (ngSubmit)="login()">
       <ion-item>
-        <ion-label color="light">Numéro de téléphone</ion-label>
-        <ion-input color="light" type="tel" placeholder="Numéro de téléphone" formControlName="tel"></ion-input>
-        <ion-note slot="error" *ngIf="(tel.dirty || tel.touched) && tel.errors">
-          Numéro de téléphone incorrect
+        <ion-label color="light">Adresse mail</ion-label>
+        <ion-input color="light" type="email" placeholder="Adresse mail" formControlName="email"></ion-input>
+        <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">
+          Adresse mail incorrect
         </ion-note>
       </ion-item>
 
       <ion-item>
         <ion-label color="light">Mot de passe</ion-label>
-        <ion-input color="light" type="password" placeholder="Mot de passe" formControlName="password"></ion-input>
+        <ion-input color="light" type="{{ getPasswordType() }}" placeholder="Mot de passe" formControlName="password">
+        </ion-input>
+        <ion-icon color="white" slot="end" name="eye" *ngIf="!isVisible" (click)="changePasswordVisibility()"></ion-icon>
+        <ion-icon color="white" slot="end" name="eye-off" *ngIf="isVisible" (click)="changePasswordVisibility()"></ion-icon>
         <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">
           Mot de passe incorrect
         </ion-note>
@@ -29,12 +32,13 @@
         <ion-button routerLink="/forgot" color="light" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
       </ion-item>
 
-      <ion-button type="submit" (click)="login()" color="success" expand="full" [disabled]="!credentials.valid" shape="round">Se connecter</ion-button>
+      <ion-button type="submit" (click)="login()" color="success" expand="full" [disabled]="!credentials.valid"
+        shape="round">Se connecter</ion-button>
 
       <ion-button routerLink="/register" color="light" expand="block" shape="round" fill="outline">Créer un compte
       </ion-button>
 
-      <ion-item lines="none">
+      <!-- <ion-item lines="none">
         <ion-label color="light" text-center>Ou connectez-vous avec</ion-label>
       </ion-item>
 
@@ -43,7 +47,7 @@
           <ion-icon slot="start" name="logo-google"></ion-icon>
           Google
         </ion-button>
-      </div>
+      </div> -->
     </form>
   </div>
 </ion-content>

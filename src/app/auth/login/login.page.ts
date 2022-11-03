@@ -14,7 +14,7 @@ export class LoginPage implements OnInit {
 
   credentials: FormGroup;
   isVisible: boolean = false;
-  errorMessages = { tel: '', password: '' };
+  errorMessages = { email: '', password: '' };
   isLoading: boolean = false;
   isErrors: boolean = false;
 
@@ -27,8 +27,8 @@ export class LoginPage implements OnInit {
   ) { }
 
   // acces facile aux donnees du formulaire
-  get tel() {
-    return this.credentials.get('tel');
+  get email() {
+    return this.credentials.get('email');
   }
 
   get password() {
@@ -37,23 +37,21 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.credentials = this.fb.group({
-      tel: ['', [Validators.required, Validators.maxLength(9), Validators.minLength(9)]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
   isCredentials(): boolean {
-    return ((this.credentials.get('tel').value).trim() == '' || (this.credentials.get('password').value).trim() == '') ? false : true;
+    return ((this.credentials.get('email').value).trim() == '' || (this.credentials.get('password').value).trim() == '') ? false : true;
   }
 
   async login() {
-    console.log(this.credentials);
     if (this.isCredentials()) {
-      console.log('ok debut');
       if (this.credentials.valid) {
         await this.utilService.showLoader();
   
-        const user = this.authService.login(this.credentials.value);
+        const user = await this.authService.login(this.credentials.value);
         await this.utilService.dismiss();
   
         if (user) {
