@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: "AIzaSyDMitz7u1l4522GLS0D6QOugddorbv1um8",
-    authDomain: "orioncv-e7d4f.firebaseapp.com",
-    projectId: "orioncv-e7d4f",
-    storageBucket: "orioncv-e7d4f.appspot.com",
-    messagingSenderId: "344216831934",
-    appId: "1:344216831934:web:88dae1deab10c4c35d1bef",
-    measurementId: "G-8CSEFGXG1P"
-  }
+    apiKey: "AIzaSyA3vyt5b7XJ0UQA1VBWsqNyQQwFiWDPNbo",
+    authDomain: "afidi-follow-child.firebaseapp.com",
+    projectId: "afidi-follow-child",
+    storageBucket: "afidi-follow-child.appspot.com",
+    messagingSenderId: "560314511144",
+    appId: "1:560314511144:web:9a7fee6262a0abcd67aa1d",
+    measurementId: "G-54JR68GJB5"
+  }  
 };
