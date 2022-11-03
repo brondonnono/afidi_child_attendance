@@ -12,19 +12,29 @@
 </ion-header>
 
 <ion-content class="bg-smallGrey">
-  <ion-list *ngIf="histories.length != 0">
-    <ion-item *ngFor="let history of histories">
-      <h2>{{history.day}}</h2>
-      <p>
-        Heure d'arrivée: <strong>{{history.arrivedHour}}</strong>.
-        Heure de départ: <strong>{{history.leavingHour}}</strong>.
-      </p>
-    </ion-item>
-  </ion-list>
-  <ion-list *ngIf="histories.length == 0">
-    <div class="bg-smallGrey center ion-padding">
-      <ion-icon color="light" class="icon_full" slot="icon-only" name="library"></ion-icon>
-      <h5 class="light">L'adhérent ne c'est pas encore rendu à la bibliothèque AFIDI </h5>
-    </div>
-  </ion-list>
+  <div *ngIf="data.length != 0">
+    <ion-list *ngFor="let elem of data">
+      <ion-list-header class="list-header-color pb-10">
+        {{elem.adherent.name}}
+      </ion-list-header>
+      <ion-item *ngFor="let history of elem.histories">
+        <ion-label>
+          <h2>{{toLocalDate(history.day)}}</h2>
+        </ion-label>
+        <ion-label>
+          <h3>
+            Heure d'arrivée: <strong>{{history.arrivedHour}}</strong>
+          </h3>
+          <h4>
+            Heure de départ: <strong>{{history.leavingHour}}</strong>
+          </h4>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="bg-smallGrey center ion-padding" *ngIf="data.length == 0">
+    <ion-icon color="light" class="icon_full" slot="icon-only" name="library"></ion-icon>
+    <h5 class="light">L'adhérent ne c'est pas encore rendu à la bibliothèque AFIDI </h5>
+  </div>
 </ion-content>

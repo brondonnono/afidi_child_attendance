@@ -40,30 +40,66 @@ export class StorageService {
   async getOneDayActivities(day: string) {
     let date = new Date(day);
     let dayActivities = [];
-    const activities =  await this.getActivities();
+    const activities = await this.getActivities();
     if (activities) {
       activities.forEach(res => {
         const activity = res.data();
-        if (activity.day == date) {
-          dayActivities.push(activity);
-        }
+        if (activity.day == date) dayActivities.push(activity);
       });
     }
     return dayActivities;
   }
 
-  // async getUserExperiences() {
-  //   const user = this.auth.currentUser;
-  //   const experiences = await getDocs(collection(this.firestore, `users/${user.uid}/experiences`));
-  //   return experiences;
-  // }
+  async getHistories() {
+    const activities = await getDocs(collection(this.firestore, "histories"));
+    return activities;
+  }
+
+  async getAdherentHistories(adherentID: string) {
+    let adherentHistories = [];
+    const histories = await this.getHistories();
+    if (histories) {
+      histories.forEach(res => {
+        const history = res.data();
+        if (history.adherentID == adherentID) adherentHistories.push(history);
+      });
+    }
+    return adherentHistories;
+  }
+
+  async getAdherents() {
+    const adherentsList = await getDocs(collection(this.firestore, `adherents`));
+    return adherentsList;
+  }
+
+  async getAdherentsFromParentID(parentID: string) {
+    let parentAdherents = [];
+    const adherentsList = await this.getAdherents();
+    if (adherentsList) {
+      adherentsList.forEach(res => {
+        const adherent = res.data();
+        if (adherent.isParent == false && adherent.parentID == parentID)
+          parentAdherents.push(adherent);
+      });
+    }
+    return parentAdherents;
+  }
+
+
+  async getFormatedHistoryForAdherents(adherentsList: any[]) {
+    let adherentsNewHist = [];
+    adherentsList.forEach(res => {
+      const currentAdherentHistories = {adherent: res, histories: this.getAdherentHistories(res.adherentID)};
+      adherentsNewHist.push(currentAdherentHistories);
+    })
+  }
 
   // async getUserCompetences() {
   //   const user = this.auth.currentUser;
   //   const collectionRef = collection(this.firestore, 'users');
   //   console.log(collectionRef);
   //   const competences = await getDocs(collectionRef);
-    
+
   //   const result = await getDocs(collection(this.firestore, `users/${user.uid}/competences`));
   //   return result;
   // }
