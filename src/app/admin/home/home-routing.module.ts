@@ -29,6 +29,14 @@ const routes: Routes = [
         loadChildren: () => import('../setting/setting.module').then( m => m.SettingPageModule)
       },
       {
+        path: 'account',
+        loadChildren: () => import('../account/account.module').then( m => m.AccountPageModule)
+      },
+      {
+        path: 'adherent',
+        loadChildren: () => import('../adherent/adherent.module').then( m => m.AdherentPageModule)
+      },
+      {
         path: '',
         redirectTo: '/home/scan',
         pathMatch: 'full'
