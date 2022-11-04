@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      Scan des badges
+      Scan de badges
     </ion-title>
     <ion-buttons slot="end">
       <ion-button *ngIf="showCamera" (click)="closeCamera()">
@@ -33,7 +33,7 @@
       <ion-input [(ngModel)]="textToCode" placeholder="Entrez votre URL"></ion-input>
     </ion-item>
 
-    <ion-button color="dark" expand="block" (click)="createQRCode()" *ngIf="!showCamera && textToCode.trim()!=''">
+    <ion-button color="dark" expand="block" (click)="createQRCode()" *ngIf="!showCamera">
       <ion-icon slot="start" name="create"></ion-icon>
       Créer un QR Code
     </ion-button>
