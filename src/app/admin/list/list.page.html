@@ -8,11 +8,11 @@
 
 <ion-content class="bg-smallGrey">
   <ion-list>
-    <ion-list-header class="list-header-color pb-10">
+    <ion-list-header class="list-header-color pb-10 bold">
       Elèves
     </ion-list-header>
     <ion-item *ngFor="let adherent of adherents">
-      <ion-label>
+      <ion-label class="elem-title">
       {{adherent?.name}}
       </ion-label>
       <ion-icon name="chevron-forward" class="grey" slot="end"></ion-icon>

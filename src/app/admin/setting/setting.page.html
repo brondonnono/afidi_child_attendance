@@ -5,29 +5,42 @@
 </ion-header>
 
 <ion-content class="bg-smallGrey">
-  <ion-card>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon slot="start" name="moon-outline"></ion-icon>
-        <ion-label class="elem-title">
-          Mode sombre
-        </ion-label>
-        <ion-toggle (ionChange)="changeThemeMode($event)"></ion-toggle>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
   <ion-grid>
     <ion-row>
-      <ion-col size="6">
+      <ion-col size="12">
         <ion-card>
+          <ion-card-content>
+            <ion-item lines="none">
+              <ion-icon slot="start" name="moon-outline"></ion-icon>
+              <ion-label class="elem-title">
+                Mode sombre
+              </ion-label>
+              <ion-toggle (ionChange)="changeThemeMode($event)"></ion-toggle>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12">
+        <ion-card routerLink="account">
           <ion-card-header>
-            <ion-icon name="speedometer"></ion-icon>
+            <ion-img src="assets/img/gestion_admin.png"></ion-img>
           </ion-card-header>
           <ion-card-content class="center">
             Gestion des comptes
           </ion-card-content>
         </ion-card>
       </ion-col>
+      <ion-col size="12">
+        <ion-card routerLink="adherent">
+          <ion-card-header class="center">
+            <ion-img src="assets/img/gestion_adherent.png"></ion-img>
+          </ion-card-header>
+          <ion-card-content class="center">
+            Gestion des adhérents
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
     </ion-row>
   </ion-grid>
+
 </ion-content>
