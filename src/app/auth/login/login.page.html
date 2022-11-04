@@ -10,32 +10,32 @@
 
     <form [formGroup]="credentials" (ngSubmit)="login()">
       <ion-item>
-        <ion-label color="light">Adresse mail</ion-label>
-        <ion-input color="light" type="email" placeholder="Adresse mail" formControlName="email"></ion-input>
-        <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">
+        <ion-label color="light" class="elem-title">Adresse mail</ion-label>
+        <ion-input color="light" class="elem-title" type="email" placeholder="Adresse mail" formControlName="email"></ion-input>
+        <ion-note slot="error" class="elem-title" *ngIf="(email.dirty || email.touched) && email.errors">
           Adresse mail incorrect
         </ion-note>
       </ion-item>
 
       <ion-item>
-        <ion-label color="light">Mot de passe</ion-label>
-        <ion-input color="light" type="{{ getPasswordType() }}" placeholder="Mot de passe" formControlName="password">
+        <ion-label color="light" class="elem-title">Mot de passe</ion-label>
+        <ion-input color="light" class="elem-title" type="{{ getPasswordType() }}" placeholder="Mot de passe" formControlName="password">
         </ion-input>
         <ion-icon color="white" slot="end" name="eye" *ngIf="!isVisible" (click)="changePasswordVisibility()"></ion-icon>
         <ion-icon color="white" slot="end" name="eye-off" *ngIf="isVisible" (click)="changePasswordVisibility()"></ion-icon>
-        <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">
+        <ion-note class="elem-title" slot="error" *ngIf="(password.dirty || password.touched) && password.errors">
           Mot de passe incorrect
         </ion-note>
       </ion-item>
 
       <ion-item lines="none">
-        <ion-button routerLink="/forgot" color="light" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
+        <ion-button class="elem-title" routerLink="/forgot" color="light" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
       </ion-item>
 
-      <ion-button type="submit" (click)="login()" color="success" expand="full" [disabled]="!credentials.valid"
+      <ion-button class="elem-title" type="submit" (click)="login()" color="success" expand="full" [disabled]="!credentials.valid"
         shape="round">Se connecter</ion-button>
 
-      <ion-button routerLink="/register" color="light" expand="block" shape="round" fill="outline">Créer un compte
+      <ion-button class="elem-title" routerLink="/register" color="light" expand="block" shape="round" fill="outline">Créer un compte
       </ion-button>
 
       <!-- <ion-item lines="none">
