@@ -1,3 +1,5 @@
+import { NavigationService } from './../../services/navigation.service';
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
@@ -16,7 +18,9 @@ export class ScanPage implements OnInit {
   constructor(
     // private iab: InAppBrowser,
     // private qrScanner: QRScanner,
-    public alertController: AlertController
+    public alertController: AlertController,
+    private authService: AuthService,
+    private navigationService: NavigationService
   ) {
     // this.scanCode();
   }
@@ -60,6 +64,11 @@ export class ScanPage implements OnInit {
 
   openLink(link: any) {
     // const browser = this.iab.create(link, '_system', 'location=yes');
+  }
+
+  logout() {
+    this.authService.logout();
+    this.navigationService.goto('/login');
   }
 
 }
