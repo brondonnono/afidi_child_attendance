@@ -13,30 +13,30 @@
 
 <ion-content class="bg-smallGrey">
   <ion-list>
-    <ion-list-header class="list-header-color pb-10">
+    <ion-list-header class="list-header-color pb-10  boldItalic">
       Aujourd'hui
     </ion-list-header>
     <ion-item *ngFor="let activity of getTodayActivities()">
-      <ion-label>
+      <ion-label class="elem-title">
         <h2>{{activity?.title}}</h2>
-        <h4 class="gray">{{activity.shortDescription}}</h4>
+        <h4 class="gray elem-title">{{activity.shortDescription}}</h4>
       </ion-label>
-      <ion-label slot="end" class="gray">
+      <ion-label slot="end" class="gray elem-title">
         <h4>{{activity.beginTime}} - {{activity.endTime}}</h4>
       </ion-label>
       <ion-icon class="gray" slot="end" name="chevron-forward"></ion-icon>
     </ion-item>
   </ion-list>
   <ion-list>
-    <ion-list-header class="list-header-color pb-10">
+    <ion-list-header class="list-header-color pb-10 boldItalic">
       Demain
     </ion-list-header>
     <ion-item *ngFor="let activity of getTomorrowActivities()">
-      <ion-label>
+      <ion-label class="elem-title">
         <h2>{{activity?.title}}</h2>
         <h4 class="gray">{{activity.shortDescription}}</h4>
       </ion-label>
-      <ion-label slot="end" class="gray">
+      <ion-label slot="end" class="gray elem-title">
         <h4>{{activity.beginTime}} - {{activity.endTime}}</h4>
       </ion-label>
       <ion-icon class="gray" slot="end" name="chevron-forward"></ion-icon>
