@@ -1,9 +1,21 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>list</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Listes des adhérents
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="bg-smallGrey">
+  <ion-list>
+    <ion-list-header class="list-header-color pb-10">
+      Elèves
+    </ion-list-header>
+    <ion-item *ngFor="let adherent of adherents">
+      <ion-label>
+      {{adherent?.name}}
+      </ion-label>
+      <ion-icon name="chevron-forward" class="grey" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
 </ion-content>

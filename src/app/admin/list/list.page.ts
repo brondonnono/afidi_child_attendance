@@ -7,9 +7,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPage implements OnInit {
 
+  adherents = [];
+  tmp = [
+    {
+      name: 'Arthur'
+    },
+    {
+      name: 'Fouda'
+    },
+    {
+      name: 'Jean'
+    },
+    {
+      name: 'Christelle'
+    },
+    {
+      name: 'Brenda'
+    },
+    {
+      name: 'Nina'
+    },
+    {
+      name: 'Danielle Cynthia'
+    },
+    {
+      name: 'Patrick'
+    },
+  ]
   constructor() { }
 
   ngOnInit() {
+    this.getAdherentsList();
+  }
+
+  getAdherentsList() {
+    this.adherents = this.tmp;
   }
 
 }
