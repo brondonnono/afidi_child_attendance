@@ -3,7 +3,7 @@ export class User {
     private uid: string;
     public username: string;
     public email: string;
-    public pswd: string;
+    private pswd: string;
     public language: string;
     public firstName: string;
     public lastName: string;
@@ -70,6 +70,7 @@ export class User {
         this.phoneNumber = phoneNumber;
         if (isMember) this.isMember = isMember;
         else this.isMember = false;
+
         if (isParent) this.isParent = isParent;
         else this.isParent = false;
 
@@ -89,7 +90,7 @@ export class User {
         return this.isAdmin;
     }
 
-    public setIsAdmin( isAdmin: boolean): void {
+    public setIsAdmin(isAdmin: boolean): void {
         this.isAdmin = isAdmin;
     }
 
@@ -97,7 +98,15 @@ export class User {
         return this.isParent;
     }
 
-    public setIsParent( isParent: boolean): void {
+    public setIsParent(isParent: boolean): void {
         this.isParent = isParent;
+    }
+
+    public getPswd(): string {
+        return this.pswd;
+    }
+
+    public setPswd(pswd: string) {
+        this.pswd = pswd;
     }
 }

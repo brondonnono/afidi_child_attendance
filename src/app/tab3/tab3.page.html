@@ -1,145 +1,279 @@
 <ion-content class="bg-smallGrey">
-  <div id="header" class="pt-10">
-    <img src="assets/img/noavatar.png" />
-    <h1>Scofield</h1>
+  <div *ngIf="!isEditing">
+
+    <div id="header" class="pt-10">
+      <img [src]="currentUser.img" />
+      <h1>{{currentUser.username}}</h1>
+    </div>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-label>
+          Numéro de téléphone
+        </ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>
+            {{currentUser.phoneNumber}}
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-label>
+          Adresse mail
+        </ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label class="smaller">
+            {{currentUser.email}}
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-label>
+          Nom
+        </ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>
+            {{currentUser.firstName}}
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-label>
+          Prénom
+        </ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>
+            {{currentUser.lastName}}
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-label>
+          Langue
+        </ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>
+            {{currentUser.language == 'fr' ? 'Français': 'Anglais'}}
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-label>
+          Sexe
+        </ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>
+            {{currentUser.sex}}
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-label>
+          Ville
+        </ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>
+            {{currentUser.city}}
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-label>
+          Quartier
+        </ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>
+            {{currentUser.quater}}
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-label>
+          Statut
+        </ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>
+            {{currentUser.isMember ? 'Membre' : getStatus()}}
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="isEditing">
+    <form [formGroup]="credentials" (ngSubmit)="save()">
+      <div id="header" class="pt-10">
+        <img [src]="currentUser.img" />
+        <ion-label (click)="updatePicture()">Modifier</ion-label>
+      </div>
+      <ion-card>
+        <ion-card-header>
+          <ion-label>
+            Nom d'utilisateur
+          </ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input type="tel" [value]="currentUser.username" formControlName="username"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-label>
+            Numéro de téléphone
+          </ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input type="tel" [value]="currentUser.phoneNumber" formControlName="phoneNumber"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-label>
+            Adresse mail
+          </ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input class="smaller" type="text" [value]="currentUser.email" formControlName="email"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-label>
+            Nom
+          </ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input type="text" [value]="currentUser.firstName" formControlName="firstName"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-label>
+            Prénom
+          </ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input type="text" [value]="currentUser.lastName" formControlName="lastName"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-label>
+            Langue
+          </ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-select [value]="currentUser.language" formControlName="language">
+              <ion-select-option value="fr">
+                Français
+              </ion-select-option>
+              <ion-select-option value="en">
+                Anglais
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-label>
+            Sexe
+          </ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input type="text" [value]="currentUser.sex" formControlName="sex"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-label>
+            Ville
+          </ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input type="text" [value]="currentUser.city" formControlName="city"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-label>
+            Quartier
+          </ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input type="text" [value]="currentUser.quater" formControlName="quater"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </form>
   </div>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-label>
-        Numéro de téléphone
-      </ion-label>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label>
-          {{currentUser.phoneNumber}}
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-label>
-       Adresse mail
-      </ion-label>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label class="smaller">
-          {{currentUser.email}}
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-label>
-       Nom
-      </ion-label>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label>
-          {{currentUser.firstName}}
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-label>
-       Prénom
-      </ion-label>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label>
-          {{currentUser.lastName}}
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-label>
-       Langue
-      </ion-label>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label>
-          {{currentUser.language == 'fr' ? 'Français': 'Anglais'}}
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-label>
-       Sexe
-      </ion-label>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label>
-          {{currentUser.sex}}
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-label>
-       Ville
-      </ion-label>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label>
-          {{currentUser.city}}
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-label>
-       Quartier
-      </ion-label>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label>
-          {{currentUser.quater}}
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-label>
-       Statut
-      </ion-label>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label>
-          {{currentUser.isMember ? 'Membre' : getStatus()}}
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
-        <ion-icon name="pencil"></ion-icon>
+    <ion-fab-button (click)="edit()" *ngIf="!isEditing">
+      <ion-icon name="pencil"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-button color="success" (click)="save()" *ngIf="isEditing">
+      <ion-icon name="save"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>

@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
   signOut,
+  updateEmail
 } from '@angular/fire/auth';
 
 
@@ -44,6 +45,10 @@ export class AuthService {
       console.log(e);
       return null;
     }
+  }
+
+  async updateEmail(newEmail: string) {
+    return updateEmail(this.auth.currentUser, newEmail);
   }
 
   logout() {
