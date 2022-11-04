@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { DateParserService } from '../services/date-parser.service';
 import { NavigationService } from '../services/navigation.service';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-tab2',
@@ -69,7 +71,9 @@ export class Tab2Page {
   ];
   constructor(
     private authService: AuthService,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private dateParserService: DateParserService,
+    private storageService: StorageService
   ) {
     this.getHistories();
   }

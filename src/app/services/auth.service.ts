@@ -18,7 +18,7 @@ export class AuthService {
     private auth: Auth
   ) { }
 
-  
+
   async login({ email, password }) {
     try {
       const user = await signInWithEmailAndPassword(
@@ -70,8 +70,7 @@ export class AuthService {
   }
 
   getUid() {
-    if (this.auth.currentUser)
-      return this.auth.currentUser.uid;
+    if (this.auth.currentUser) return this.auth.currentUser.uid;
   }
 
 }
