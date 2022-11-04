@@ -5,6 +5,7 @@ import {
   redirectLoggedInTo,
   canActivate,
 } from '@angular/fire/auth-guard';
+import { AdminGuard } from './guard/admin.guard';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['']);
@@ -29,6 +30,16 @@ const routes: Routes = [
     path: 'forgot',
     loadChildren: () => import('./auth/forgot/forgot.module').then( m => m.ForgotPageModule),
     ...canActivate(redirectLoggedInToHome)
+  },
+  {
+    path: 'index',
+    loadChildren: () => import('./admin/index/index.module').then( m => m.IndexPageModule),
+    // ...canActivate(redirectUnauthorizedToLogin),
+    // canLoad: [AdminGuard] 
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./admin/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '**',

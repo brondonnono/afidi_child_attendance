@@ -55,6 +55,7 @@ export class LoginPage implements OnInit {
         await this.utilService.dismiss();
   
         if (user) {
+          
           this.navigationService.goto('');
         } else {
           this.utilService.showAlert('Echec de connexion', 'Veuillez reéssayer SVP!');

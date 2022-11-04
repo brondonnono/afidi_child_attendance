@@ -70,7 +70,8 @@ export class AuthService {
   }
 
   getUid() {
-    return this.auth.currentUser.uid;
+    if (this.auth.currentUser)
+      return this.auth.currentUser.uid;
   }
 
 }
