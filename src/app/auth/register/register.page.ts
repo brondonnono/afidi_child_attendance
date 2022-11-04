@@ -59,21 +59,35 @@ export class RegisterPage implements OnInit {
   }
 
   async register() {
+    let errMsg = {title: '', msg: ''};
     await this.utilService.showLoader();
     const loginData = {email: this.email.value, password: this.password.value};
     const user = await this.authService.register(loginData);
     await this.utilService.dismiss();
-    console.log(user);
-    if (user) {
+    if (user.user) {
       const result = await this.storageService.storeUserEmail(this.email.value);
       if (result)
         this.navigationService.goto('login');
       else {
-        this.authService.deleteUser();
-        this.utilService.showAlert('Echec d\'inscription', 'Veuillez reéssayer SVP!');
+        // this.authService.deleteUser();
+        this.authService.authErrorsCodes.forEach(err => {
+          if (err.code == user)  {
+            errMsg.title = 'Erreur réseau';
+            errMsg.msg = 'Vérifiez votre connexion internet puis réésayez!';
+          }
+        });
+        if (errMsg.title != '') this.utilService.showAlert(errMsg.title, errMsg.msg);
+        else this.utilService.showAlert('Echec d\'inscription', 'Veuillez reéssayer SVP!');
       }
     } else {
-      this.utilService.showAlert('Echc d\'inscription', 'Veuillez reéssayer SVP!');
+      this.authService.authErrorsCodes.forEach(err => {
+        if (err.code == user)  {
+          errMsg.title = 'Erreur réseau';
+          errMsg.msg = 'Vérifiez votre connexion internet puis réésayez!';
+        }
+      });
+      if (errMsg.title != '') this.utilService.showAlert(errMsg.title, errMsg.msg);
+      else this.utilService.showAlert('Echec d\'inscription', 'Veuillez reéssayer SVP!');
     }
   }
 

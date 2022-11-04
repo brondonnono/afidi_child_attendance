@@ -14,6 +14,12 @@ import {
 })
 export class AuthService {
 
+  public authErrorsCodes = [
+    {
+      type: 'network',
+      code: 'auth/network-request-failed'
+    },
+  ];
   constructor(
     private auth: Auth
   ) { }
@@ -28,7 +34,7 @@ export class AuthService {
       );
       return user;
     } catch (e) {
-      return null;
+      return e.code;
     }
   }
 
@@ -42,8 +48,7 @@ export class AuthService {
       );
       return user;
     } catch (e) {
-      console.log(e);
-      return null;
+      return e.code;
     }
   }
 

@@ -10,7 +10,7 @@
 
     <form [formGroup]="credentials" (ngSubmit)="register()">
       <ion-item>
-        <ion-label color="light" class="elem-title">Nom d'utilisateur</ion-label>
+        <ion-label color="light">Nom d'utilisateur</ion-label>
         <ion-input color="light" class="elem-title" type="text" placeholder="Nom d'utilisateur" formControlName="username"></ion-input>
         <ion-note class="elem-title" slot="error" *ngIf="(username.dirty || username.touched) && username.errors">
           Nom d'utilisateur incorrect
@@ -18,7 +18,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-label color="light" class="elem-title">Adresse mail</ion-label>
+        <ion-label color="light">Adresse mail</ion-label>
         <ion-input color="light" class="elem-title" type="email" placeholder="Adresse mail" formControlName="email"></ion-input>
         <ion-note slot="error" class="elem-title" *ngIf="(email.dirty || email.touched) && email.errors">
           Adresse mail incorrect
@@ -26,7 +26,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-label color="light" class="elem-title">Numéro de téléphone</ion-label>
+        <ion-label color="light">Numéro de téléphone</ion-label>
         <ion-input color="light" class="elem-title" type="tel" placeholder="Numéro de téléphone" formControlName="tel"></ion-input>
         <ion-note slot="error" class="elem-title" *ngIf="(tel.dirty || tel.touched) && tel.errors">
           Numéro de téléphone incorrect
@@ -34,7 +34,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-label color="light" class="elem-title">Mot de passe</ion-label>
+        <ion-label color="light">Mot de passe</ion-label>
         <ion-input color="light" class="elem-title" type="password" placeholder="Mot de passe" formControlName="password"></ion-input>
         <ion-note slot="error" class="elem-title" *ngIf="(password.dirty || password.touched) && password.errors">
           Mot de passe incorrect
@@ -42,8 +42,8 @@
       </ion-item>
 
       <ion-item>
-        <ion-label color="light" class="elem-title">Repetez le mot de passe</ion-label>
-        <ion-input color="light" class="elem-title" type="password" placeholder="Repetez le mot de passe" formControlName="Cpassword">
+        <ion-label color="light">Repetez le mot de passe</ion-label>
+        <ion-input color="light" type="password" placeholder="Repetez le mot de passe" formControlName="Cpassword">
         </ion-input>
         <ion-note slot="error" class="elem-title" *ngIf="(Cpassword.dirty || Cpassword.touched) && Cpassword.errors">
           Les 2 mot de passes ne correspondent pas
