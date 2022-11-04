@@ -89,5 +89,9 @@
 
 // size
 .icon_full {
-    font-size: 1500%;
+    font-size: 1500% !important;
+}
+
+.smaller {
+    font-size: smaller !important;
 }

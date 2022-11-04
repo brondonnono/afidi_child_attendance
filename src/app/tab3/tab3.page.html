@@ -1,17 +1,86 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="bg-smallGrey">
+  <div id="header" class="pt-10">
+    <img src="assets/img/noavatar.png" />
+    <h1>Scofield</h1>
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-label>
+        Numéro de téléphone
+      </ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>
+          655429550
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-label>
+       Adresse mail
+      </ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label class="smaller">
+          brondon.nono@facsciences-uy1.cm
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-label>
+       Nom
+      </ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>
+          NONO
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-label>
+       Prénom
+      </ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>
+          Wilfried
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-label>
+       Statut
+      </ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>
+          Membre
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+        <ion-icon name="pencil"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

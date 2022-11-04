@@ -1,0 +1,21 @@
+#header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        margin: 0;
+        font-weight: 700;
+        font-size: 26px;
+        color: #010100;
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    img {
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        //   border: 5px solid #d8d8d8;
+    }
+}
