@@ -64,4 +64,8 @@ export class AuthService {
     return (this.auth.currentUser != null);
   }
 
+  getUid() {
+    return this.auth.currentUser.uid;
+  }
+
 }

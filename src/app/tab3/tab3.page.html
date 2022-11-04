@@ -13,7 +13,7 @@
     <ion-card-content>
       <ion-item>
         <ion-label>
-          655429550
+          {{currentUser.phoneNumber}}
         </ion-label>
       </ion-item>
     </ion-card-content>
@@ -27,7 +27,7 @@
     <ion-card-content>
       <ion-item>
         <ion-label class="smaller">
-          brondon.nono@facsciences-uy1.cm
+          {{currentUser.email}}
         </ion-label>
       </ion-item>
     </ion-card-content>
@@ -42,7 +42,7 @@
     <ion-card-content>
       <ion-item>
         <ion-label>
-          NONO
+          {{currentUser.firstName}}
         </ion-label>
       </ion-item>
     </ion-card-content>
@@ -57,7 +57,22 @@
     <ion-card-content>
       <ion-item>
         <ion-label>
-          Wilfried
+          {{currentUser.lastName}}
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-label>
+       Langue
+      </ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>
+          {{currentUser.language == 'fr' ? 'Français': 'Anglais'}}
         </ion-label>
       </ion-item>
     </ion-card-content>
@@ -72,7 +87,7 @@
     <ion-card-content>
       <ion-item>
         <ion-label>
-          Membre
+          {{currentUser.isMember ? 'Membre' : getStatus()}}
         </ion-label>
       </ion-item>
     </ion-card-content>

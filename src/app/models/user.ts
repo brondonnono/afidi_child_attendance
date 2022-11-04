@@ -2,6 +2,7 @@
 export class User {
     private uid: string;
     public username: string;
+    public email: string;
     public pswd: string;
     public language: string;
     public firstName: string;
@@ -13,10 +14,28 @@ export class User {
     public phoneNumber: string;
     private isParent: boolean;
     private isAdmin: boolean;
+    public isMember: boolean;
 
     constructor() {
+        this.setEmptyValue();
+    }
+
+    public setEmptyValue() {
+        this.uid = '';
+        this.username = '';
+        this.email = '';
+        this.pswd = '';
+        this.firstName = '';
+        this.lastName = '';
+        this.sex = '';
+        this.city = '';
+        this.quater = '';
+        this.phoneNumber = '';
+        this.isParent = false;
         this.isAdmin = false;
+        this.isMember = false;
         this.language = 'fr';
+        this.img = 'assets/img/noavatar.png';
     }
 
     public setDefaultValue() {
@@ -24,6 +43,7 @@ export class User {
         this.username = 'Macbook237';
         this.pswd = '123456';
         this.language = 'fr';
+        this.email = 'brondon.nono@facsciences-uy1.cm';
         this.firstName = 'Nono Mabou';
         this.lastName = 'Wilfried Brondon';
         this.sex = 'Masculin';
@@ -32,12 +52,14 @@ export class User {
         this.quater = 'Odza';
         this.phoneNumber = '682510533';
         this.isParent = false;
+        this.isMember = true;
         this.isAdmin = true;
     }
 
-    public setUserValue(username: string, pswd: string, language: string, firstName: string, lastName: string, sex: string, img: string, city: string, quater: string, phoneNumber: string, isParent: boolean, isAdmin?: boolean): void {
+    public setUserValue(username: string, pswd: string, email: string, language: string, firstName: string, lastName: string, sex: string, img: string, city: string, quater: string, phoneNumber: string, isParent: boolean, isAdmin?: boolean, isMember?: boolean): void {
         this.username = username;
         this.pswd = pswd;
+        this.email = email;
         this.language = language;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -46,6 +68,8 @@ export class User {
         this.city = city;
         this.quater = quater;
         this.phoneNumber = phoneNumber;
+        if (isMember) this.isMember = isMember;
+        else this.isMember = false;
         if (isParent) this.isParent = isParent;
         else this.isParent = false;
 

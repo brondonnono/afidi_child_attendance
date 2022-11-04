@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
-import { doc, getDocs, setDoc, serverTimestamp, Firestore, collection, deleteDoc } from '@angular/fire/firestore';
+import { doc, getDocs, getDoc, setDoc, serverTimestamp, Firestore, collection, deleteDoc } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -28,13 +28,20 @@ export class StorageService {
     }
   }
 
-  getUid() {
-    return this.auth.currentUser.uid;
-  }
-
   async getActivities() {
     const activities = await getDocs(collection(this.firestore, "activities"));
     return activities;
+  }
+
+  async getUsers() {
+    const users = await getDocs(collection(this.firestore, "users"));
+    return users;
+  }
+
+  async getUserByUid(uid: string) {
+    const userDocRef = doc(this.firestore, `users/${uid}`);
+    const user = await getDoc(userDocRef);
+    return user;
   }
 
   async getOneDayActivities(day: string) {
