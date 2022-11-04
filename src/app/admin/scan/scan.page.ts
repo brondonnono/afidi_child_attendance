@@ -18,7 +18,7 @@ export class ScanPage implements OnInit {
     // private qrScanner: QRScanner,
     public alertController: AlertController
   ) {
-    this.scanCode();
+    // this.scanCode();
   }
 
   ngOnInit() {}
