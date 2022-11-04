@@ -28,6 +28,50 @@
 
 /* Personal style */
 
+.skeletonCardIonImg {
+    height: 90px;
+}
+.toast-success-class, .toast-danger-class, .toast-info-class, .toast-warning-class, ion-alert {
+    font-family: codePro-Italic !important;
+}
+.toast-success-class {
+    --color:#ffffff;
+    --button-color:#ffffff;
+    --background: var(--ion-color-success);
+    font-size: large;
+}
+.toast-warning-class {
+    --color:#ffffff;
+    --button-color:#ffffff;
+    --background: var(--ion-color-warning);
+    font-size: large;
+}
+.toast-danger-class {
+    --color:#ffffff;
+    --button-color:#ffffff;
+    --background: var(--ion-color-danger);
+    font-size: large;
+    .alert-message.sc-ion-alert-ios {
+        color: unset;
+    }
+}
+.toast-info-class {
+    --color:#ffffff;
+    --button-color:#ffffff;
+    --background: var(--ion-color-info);
+    font-size: large;
+}
+
+.notif-badge {
+    margin: -12px 0 0 -10px;
+    font-size: 10px;
+}
+
+ion-app.force-statusbar-padding {
+    --ion-safe-area-top: 5px;
+}
+
+
 // color
 .logout {
     color: red !important;
@@ -94,4 +138,154 @@
 
 .smaller {
     font-size: smaller !important;
+}
+
+/* personal font declaration and import */
+@font-face {
+    font-family: "codePro-Black";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-Black.ttf');
+}
+@font-face {
+    font-family: "codePro-BlackItalic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-BlackItalic.ttf');
+}
+@font-face {
+    font-family: "codePro-Bold";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-Bold.ttf');
+}
+@font-face {
+    font-family: "codePro-BoldItalic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-BoldItalic.ttf');
+}
+@font-face {
+    font-family: "codePro-ExtraLight";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-ExtraLight.ttf');
+}
+@font-face {
+    font-family: "codePro-ExtraLightItalic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-ExtraLightItalic.ttf');
+}
+@font-face {
+    font-family: "codePro-Italic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-Italic.ttf');
+}
+@font-face {
+    font-family: "codePro-Light";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-Light.ttf');
+}
+@font-face {
+    font-family: "codePro-LightItalic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-LightItalic.ttf');
+}
+@font-face {
+    font-family: "codePro-Medium";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-Medium.ttf');
+}
+@font-face {
+    font-family: "codePro-MediumItalic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-MediumItalic.ttf');
+}
+@font-face {
+    font-family: "codePro-Regular";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-Regular.ttf');
+}
+@font-face {
+    font-family: "codePro-SemiBold";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-SemiBold.ttf');
+}
+@font-face {
+    font-family: "codePro-SemiBoldItalic";
+    src: url('assets/fonts/Source_Code_Pro/SourceCodePro-SemiBoldItalic.ttf');
+}
+
+.bold {
+    font-family: codePro-Bold !important;
+}
+
+.boldItalic {
+    font-family: codePro-BoldItalic !important;
+}
+
+.semiBold {
+    font-family: codePro-SemiBold !important;
+}
+
+.semiBoldItalic {
+    font-family: codePro-SemiBoldItalic !important;
+}
+
+/*personal css, to apply on any place where is needed*/
+.btn-pointer {
+    cursor: pointer;
+}
+
+.ion-padding-left {
+    padding-inline-start: 30px;
+}
+
+.ion-padding-left-26 {
+    padding-inline-start: 26px;
+}
+
+.ion-padding-right {
+    padding-inline-end: 30px;
+}
+
+.ion-text-size-17 {
+    font-size: 17px;
+}
+
+.pub {
+    background: var(--ion-color-warning);
+}
+
+ion-header {
+    border: none;
+    ion-toolbar {
+        border: none;
+    }
+}
+
+ion-header {
+    ion-toolbar, ion-title {
+        ion-title, ion-label {
+            font-size: 12px;
+        }
+        ion-buttons {
+            ion-button {
+                font-size: 12px;
+                ion-icon {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+ion-toolbar, ion-toolbar > ion-label, ion-toolbar > ion-card-title, ion-toolbar > ion-title, ion-toolbar > ion-buttons > ion-button {
+    font-family: codePro-BoldItalic !important;
+}
+
+.menu-title, .slogan {
+    font-family: codePro-Italic !important;
+}
+
+.menu-title {
+    font-size: 11px !important;
+}
+
+.elem-title {
+    font-family: codePro-Italic !important;
+}
+
+ion-card-title, ion-card-content, ion-card-subtitle {
+    font-family: codePro-Regular;
+}
+
+.slogan {
+    font-size: 10px;
+}
+
+ion-button {
+    font-style: italic;
 }

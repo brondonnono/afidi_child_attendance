@@ -14,14 +14,14 @@
 <ion-content class="bg-smallGrey">
   <div *ngIf="data.length != 0">
     <ion-list *ngFor="let elem of data">
-      <ion-list-header class="list-header-color pb-10">
+      <ion-list-header class="list-header-color pb-10 bold">
         {{elem.adherent.name}}
       </ion-list-header>
       <ion-item *ngFor="let history of elem.histories">
-        <ion-label>
+        <ion-label class="elem-title">
           <h2>{{toLocalDate(history.day)}}</h2>
         </ion-label>
-        <ion-label slot="end">
+        <ion-label slot="end" class="elem-title">
           <h3>
             Heure d'arrivée: <strong>{{history.arrivedHour}}</strong>
           </h3>

@@ -3,18 +3,18 @@
 
     <div id="header" class="pt-10">
       <img [src]="currentUser.img" />
-      <h1>{{currentUser.username}}</h1>
+      <h3 class="elem-title">{{currentUser.username}}</h3>
     </div>
 
     <ion-card>
       <ion-card-header>
-        <ion-label>
+        <ion-label class="elem-title">
           Numéro de téléphone
         </ion-label>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label>
+          <ion-label class="elem-title">
             {{currentUser.phoneNumber}}
           </ion-label>
         </ion-item>
@@ -22,7 +22,7 @@
     </ion-card>
     <ion-card>
       <ion-card-header>
-        <ion-label>
+        <ion-label class="elem-title">
           Adresse mail
         </ion-label>
       </ion-card-header>
@@ -37,13 +37,13 @@
 
     <ion-card>
       <ion-card-header>
-        <ion-label>
+        <ion-label class="elem-title">
           Nom
         </ion-label>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label>
+          <ion-label class="elem-title">
             {{currentUser.firstName}}
           </ion-label>
         </ion-item>
@@ -52,13 +52,13 @@
 
     <ion-card>
       <ion-card-header>
-        <ion-label>
+        <ion-label class="elem-title">
           Prénom
         </ion-label>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label>
+          <ion-label class="elem-title">
             {{currentUser.lastName}}
           </ion-label>
         </ion-item>
@@ -67,13 +67,13 @@
 
     <ion-card>
       <ion-card-header>
-        <ion-label>
+        <ion-label class="elem-title">
           Langue
         </ion-label>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label>
+          <ion-label class="elem-title">
             {{currentUser.language == 'fr' ? 'Français': 'Anglais'}}
           </ion-label>
         </ion-item>
@@ -82,13 +82,13 @@
 
     <ion-card>
       <ion-card-header>
-        <ion-label>
+        <ion-label class="elem-title">
           Sexe
         </ion-label>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label>
+          <ion-label class="elem-title">
             {{currentUser.sex}}
           </ion-label>
         </ion-item>
@@ -97,13 +97,13 @@
 
     <ion-card>
       <ion-card-header>
-        <ion-label>
+        <ion-label class="elem-title">
           Ville
         </ion-label>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label>
+          <ion-label class="elem-title">
             {{currentUser.city}}
           </ion-label>
         </ion-item>
@@ -111,13 +111,13 @@
     </ion-card>
     <ion-card>
       <ion-card-header>
-        <ion-label>
+        <ion-label class="elem-title">
           Quartier
         </ion-label>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label>
+          <ion-label class="elem-title">
             {{currentUser.quater}}
           </ion-label>
         </ion-item>
@@ -126,13 +126,13 @@
 
     <ion-card>
       <ion-card-header>
-        <ion-label>
+        <ion-label class="elem-title">
           Statut
         </ion-label>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label>
+          <ion-label class="elem-title">
             {{currentUser.isMember ? 'Membre' : getStatus()}}
           </ion-label>
         </ion-item>
@@ -143,11 +143,11 @@
     <form [formGroup]="credentials" (ngSubmit)="save()">
       <div id="header" class="pt-10">
         <img [src]="currentUser.img" />
-        <ion-label (click)="updatePicture()">Modifier</ion-label>
+        <ion-label class="elem-title" (click)="updatePicture()">Modifier</ion-label>
       </div>
       <ion-card>
         <ion-card-header>
-          <ion-label>
+          <ion-label class="elem-title">
             Nom d'utilisateur
           </ion-label>
         </ion-card-header>
@@ -159,7 +159,7 @@
       </ion-card>
       <ion-card>
         <ion-card-header>
-          <ion-label>
+          <ion-label class="elem-title">
             Numéro de téléphone
           </ion-label>
         </ion-card-header>
@@ -171,7 +171,7 @@
       </ion-card>
       <ion-card>
         <ion-card-header>
-          <ion-label>
+          <ion-label class="elem-title">
             Adresse mail
           </ion-label>
         </ion-card-header>
@@ -184,43 +184,43 @@
 
       <ion-card>
         <ion-card-header>
-          <ion-label>
+          <ion-label class="elem-title">
             Nom
           </ion-label>
         </ion-card-header>
         <ion-card-content>
           <ion-item>
-            <ion-input type="text" [value]="currentUser.firstName" formControlName="firstName"></ion-input>
+            <ion-input class="elem-title" type="text" [value]="currentUser.firstName" formControlName="firstName"></ion-input>
           </ion-item>
         </ion-card-content>
       </ion-card>
 
       <ion-card>
         <ion-card-header>
-          <ion-label>
+          <ion-label class="elem-title">
             Prénom
           </ion-label>
         </ion-card-header>
         <ion-card-content>
           <ion-item>
-            <ion-input type="text" [value]="currentUser.lastName" formControlName="lastName"></ion-input>
+            <ion-input class="elem-title" type="text" [value]="currentUser.lastName" formControlName="lastName"></ion-input>
           </ion-item>
         </ion-card-content>
       </ion-card>
 
       <ion-card>
         <ion-card-header>
-          <ion-label>
+          <ion-label class="elem-title">
             Langue
           </ion-label>
         </ion-card-header>
         <ion-card-content>
           <ion-item>
-            <ion-select [value]="currentUser.language" formControlName="language">
-              <ion-select-option value="fr">
+            <ion-select class="elem-title" [value]="currentUser.language" formControlName="language">
+              <ion-select-option value="fr" class="elem-title">
                 Français
               </ion-select-option>
-              <ion-select-option value="en">
+              <ion-select-option value="en" class="elem-title">
                 Anglais
               </ion-select-option>
             </ion-select>
@@ -230,37 +230,37 @@
 
       <ion-card>
         <ion-card-header>
-          <ion-label>
+          <ion-label class="elem-title">
             Sexe
           </ion-label>
         </ion-card-header>
         <ion-card-content>
           <ion-item>
-            <ion-input type="text" [value]="currentUser.sex" formControlName="sex"></ion-input>
+            <ion-input class="elem-title" type="text" [value]="currentUser.sex" formControlName="sex"></ion-input>
           </ion-item>
         </ion-card-content>
       </ion-card>
       <ion-card>
         <ion-card-header>
-          <ion-label>
+          <ion-label class="elem-title">
             Ville
           </ion-label>
         </ion-card-header>
         <ion-card-content>
           <ion-item>
-            <ion-input type="text" [value]="currentUser.city" formControlName="city"></ion-input>
+            <ion-input class="elem-title" type="text" [value]="currentUser.city" formControlName="city"></ion-input>
           </ion-item>
         </ion-card-content>
       </ion-card>
       <ion-card>
         <ion-card-header>
-          <ion-label>
+          <ion-label class="elem-title">
             Quartier
           </ion-label>
         </ion-card-header>
         <ion-card-content>
           <ion-item>
-            <ion-input type="text" [value]="currentUser.quater" formControlName="quater"></ion-input>
+            <ion-input class="elem-title" type="text" [value]="currentUser.quater" formControlName="quater"></ion-input>
           </ion-item>
         </ion-card-content>
       </ion-card>

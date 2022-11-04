@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-setting',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingPage implements OnInit {
 
-  constructor() { }
+  constructor(
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  public changeThemeMode(event): void {
   }
 
 }
