@@ -1,3 +1,4 @@
+import { AccountDetailComponent } from './components/account-detail/account-detail.component';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,7 +16,10 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent, 
+    AccountDetailComponent
+  ],
   imports: [
     BrowserModule, 
     IonicModule.forRoot({ mode: 'ios', backButtonText: '' }),
@@ -31,6 +35,12 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [
+    AppComponent, 
+    AccountDetailComponent
+  ],
+  exports: [
+    AccountDetailComponent
+  ]
 })
 export class AppModule {}
