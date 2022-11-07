@@ -1,9 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>account</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Gestion des comptes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="logout" (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="bg-smallGrey">
+  <ion-list>
+    <ion-list-header class="pb-10">
+      Utilisateurs
+    </ion-list-header>
+    <ion-item>
+      
+    </ion-item>
+  </ion-list>
 </ion-content>

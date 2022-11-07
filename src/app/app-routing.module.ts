@@ -42,10 +42,19 @@ const routes: Routes = [
     loadChildren: () => import('./admin/home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'account',
+    loadChildren: () => import('./admin/account/account.module').then( m => m.AccountPageModule)
+  },
+  {
+    path: 'adherent',
+    loadChildren: () => import('./admin/adherent/adherent.module').then( m => m.AdherentPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'login',
     pathMatch: 'full'
   },
+
 ];
 @NgModule({
   imports: [

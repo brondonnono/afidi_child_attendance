@@ -1,6 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>adherent</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Gestion des adhérents</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="logout" (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

@@ -1,3 +1,5 @@
+import { NavigationService } from './../../services/navigation.service';
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private navigationService: NavigationService
+  ) { }
 
   ngOnInit() {
+  }
+
+  logout() {
+    this.authService.logout();
+    this.navigationService.goto('/login');
   }
 
 }
