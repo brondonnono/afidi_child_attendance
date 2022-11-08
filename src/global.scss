@@ -28,7 +28,6 @@
 
 /* Personal style */
 
-
 .flex-row {
     display: flex !important;
     flex-direction: row !important;
@@ -41,6 +40,10 @@
 
 .space-between {
     justify-content: space-between !important;
+}
+
+.space-evently {
+    justify-content: space-evenly !important;
 }
 
 .skeletonCardIonImg {
