@@ -16,7 +16,9 @@ export class SettingPage implements OnInit {
 
   ngOnInit() {}
 
-  public changeThemeMode(event): void {}
+  public changeThemeMode(event): void {
+    console.log(event);
+  }
 
   logout() {
     this.authService.logout();
