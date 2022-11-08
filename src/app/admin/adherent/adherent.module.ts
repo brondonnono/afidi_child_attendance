@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AdherentPageRoutingModule } from './adherent-routing.module';
 
 import { AdherentPage } from './adherent.page';
+import { PopoverPage } from '../../components/popover';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { AdherentPage } from './adherent.page';
     IonicModule,
     AdherentPageRoutingModule
   ],
-  declarations: [AdherentPage]
+  declarations: [
+    AdherentPage,
+    PopoverPage
+  ]
 })
 export class AdherentPageModule {}

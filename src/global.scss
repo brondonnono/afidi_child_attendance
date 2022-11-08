@@ -28,6 +28,21 @@
 
 /* Personal style */
 
+
+.flex-row {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.flex-column {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.space-between {
+    justify-content: space-between !important;
+}
+
 .skeletonCardIonImg {
     height: 90px;
 }
