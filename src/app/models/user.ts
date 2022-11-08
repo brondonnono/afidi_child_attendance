@@ -14,6 +14,7 @@ export class User {
     public phoneNumber: string;
     private isParent: boolean;
     private isAdmin: boolean;
+    private isLocked: boolean;
     public isMember: boolean;
 
     constructor() {
@@ -34,6 +35,7 @@ export class User {
         this.isParent = false;
         this.isAdmin = false;
         this.isMember = false;
+        this.isLocked = false;
         this.language = 'fr';
         this.img = 'assets/img/noavatar.png';
     }
@@ -52,6 +54,7 @@ export class User {
         this.quater = 'Odza';
         this.phoneNumber = '682510533';
         this.isParent = false;
+        this.isLocked = false;
         this.isMember = true;
         this.isAdmin = true;
     }
@@ -76,6 +79,8 @@ export class User {
 
         if (isAdmin) this.isAdmin = isAdmin;
         else this.isAdmin = false;
+
+        this.isLocked = false;
     }
 
     public getUid(): string {
@@ -100,6 +105,14 @@ export class User {
 
     public setIsParent(isParent: boolean): void {
         this.isParent = isParent;
+    }
+
+    public getIsLocked(): boolean {
+        return this.isLocked;
+    }
+
+    public setIsLocked(isLocked: boolean): void {
+        this.isLocked = isLocked;
     }
 
     public getPswd(): string {
