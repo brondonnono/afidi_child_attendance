@@ -14,6 +14,7 @@ export class User {
     public phoneNumber: string;
     private isParent: boolean;
     private isAdmin: boolean;
+    private rules: 'user'|'parent'|'teacher'|'student'|'manager'|'root';
     private isLocked: boolean;
     public isMember: boolean;
 
@@ -35,6 +36,7 @@ export class User {
         this.isParent = false;
         this.isAdmin = false;
         this.isMember = false;
+        this.rules = 'user';
         this.isLocked = false;
         this.language = 'fr';
         this.img = 'assets/img/noavatar.png';
@@ -56,6 +58,7 @@ export class User {
         this.isParent = false;
         this.isLocked = false;
         this.isMember = true;
+        this.rules = 'user';
         this.isAdmin = true;
     }
 
@@ -74,13 +77,20 @@ export class User {
         if (isMember) this.isMember = isMember;
         else this.isMember = false;
 
-        if (isParent) this.isParent = isParent;
-        else this.isParent = false;
+        if (isParent) {
+            this.isParent = isParent;
+            this.rules = 'parent';
+        }
+        else { 
+            this.isParent = false;
+            this.rules = 'user';
+        }
 
         if (isAdmin) this.isAdmin = isAdmin;
         else this.isAdmin = false;
 
         this.isLocked = false;
+
     }
 
     public getUid(): string {
